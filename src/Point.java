@@ -22,11 +22,33 @@ public class Point {
     public void setX(int newX) {
         this.x = newX;
     }
-    public void setX(int newY) {
+    public void setY(int newY) {
         this.y = newY;
     }
     public String coordinate() {
         return "(" + this.x + "," + this.y + ")";
     }
-    public void string() {}
+    public String quadrant() {
+        String quadrant = null;
+        if(x > 0 && y > 0) {
+            quadrant = "I";
+        } else if(x < 0 && y > 0) {
+            quadrant = "II";
+        } else if(x < 0 && y < 0) {
+            quadrant = "III";
+        } else if(x > 0 && y < 0) {
+            quadrant = "IIII";
+        } else if(x == 0 && y == 0) {
+            quadrant = "the origin";
+        } else if(x == 0 && y > 0) {
+            quadrant = "on the y-axis";
+        } else if(x == 0 && y < 0) {
+            quadrant = "on the y-axis";
+        } else if(x > 0 && y == 0) {
+            quadrant = "on the x-axis";
+        } else if(x < 0 && y == 0) {
+            quadrant = "on the x-axis";
+        }
+        return quadrant;
+    }
 }
